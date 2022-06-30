@@ -4,6 +4,7 @@ class Barang {
   String? NamaBarang;
   String? harga;
   String? stock;
+
   barangMap() {
     var mapping = Map<String, dynamic>();
     mapping['id'] = id ?? null;

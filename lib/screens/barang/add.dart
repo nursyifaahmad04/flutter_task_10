@@ -2,14 +2,14 @@ import 'package:flutter_tugas_10/model/Barang.dart';
 import 'package:flutter_tugas_10/services/barangService.dart';
 import 'package:flutter/material.dart';
 
-class AddUser extends StatefulWidget {
-  const AddUser({Key? key}) : super(key: key);
+class Add extends StatefulWidget {
+  const Add({Key? key}) : super(key: key);
 
   @override
-  State<AddUser> createState() => _AddUserState();
+  State<Add> createState() => _AddState();
 }
 
-class _AddUserState extends State<AddUser> {
+class _AddState extends State<Add> {
   var _barangKodeBarangController = TextEditingController();
   var _barangNamaBarangController = TextEditingController();
   var _barangHargaController = TextEditingController();
@@ -23,7 +23,7 @@ class _AddUserState extends State<AddUser> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("SQLite CRUD"),
+        title: const Text("Data Barang"),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -32,7 +32,7 @@ class _AddUserState extends State<AddUser> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Add New User',
+                'Tambahkan Data Barang',
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.teal,
@@ -45,10 +45,10 @@ class _AddUserState extends State<AddUser> {
                   controller: _barangKodeBarangController,
                   decoration: InputDecoration(
                     border: const OutlineInputBorder(),
-                    hintText: 'Masukkan Nama Pelanggan',
-                    labelText: 'Nama Pelanggan',
+                    hintText: 'Masukkan Kode Barang',
+                    labelText: 'Kode Barang',
                     errorText: _validateKodeBarang
-                        ? 'Nama Pelanggan Value Can\'t Be Empty'
+                        ? 'Kode Barang Value Can\'t Be Empty'
                         : null,
                   )),
               const SizedBox(
@@ -117,14 +117,14 @@ class _AddUserState extends State<AddUser> {
                             _validateNamaBarang == false &&
                             _validateHarga == false &&
                             _validateStock == false) {
-                          // print("Good Data Can Save");
-                          var _barang = Barang();
-                          _barang.KodeBarang = _barangKodeBarangController.text;
-                          _barang.NamaBarang = _barangNamaBarangController.text;
-                          _barang.harga = _barangHargaController.text;
-                          _barang.stock = _barangStockController.text;
-                          var result = await _barangService.Savebarang(_barang);
-                          Navigator.pop(context, result);
+                          print("Good Data Can Save");
+                          // var _barang = Barang();
+                          // _barang.KodeBarang = _barangKodeBarangController.text;
+                          // _barang.NamaBarang = _barangNamaBarangController.text;
+                          // _barang.harga = _barangHargaController.text;
+                          // _barang.stock = _barangStockController.text;
+                          // var result = await _barangService.Savebarang(_barang);
+                          // Navigator.pop(context, result);
                         }
                       },
                       child: const Text('Save Details')),

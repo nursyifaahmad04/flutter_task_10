@@ -1,7 +1,7 @@
 import 'package:flutter_tugas_10/model/Barang.dart';
 import 'package:flutter_tugas_10/model/User.dart';
 import 'package:flutter_tugas_10/screens/barang/EditUser.dart';
-import 'package:flutter_tugas_10/screens/barang/addUser.dart';
+import 'package:flutter_tugas_10/screens/barang/add.dart';
 import 'package:flutter_tugas_10/screens/barang/viewUser.dart';
 import 'package:flutter_tugas_10/services/barangService.dart';
 import 'package:flutter/material.dart';
@@ -142,8 +142,8 @@ class _PageBarangState extends State<PageBarang> {
           }),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const AddUser()))
+          Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const Add()))
               .then((data) {
             if (data != null) {
               getAllBarangDetails();

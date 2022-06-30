@@ -132,16 +132,16 @@ class _EditUserState extends State<EditUser> {
                             _validateAlamat == false &&
                             _validateTelepon == false &&
                             _validateEmail == false) {
-                          // print("Good Data Can Save");
-                          var _barang = Barang();
-                          _barang.id = widget.barang.id;
-                          _barang.KodeBarang = NamaPelangganController.text;
-                          _barang.NamaBarang = AlamatController.text;
-                          _barang.harga = TeleponController.text;
-                          _barang.stock = EmailController.text;
-                          var result =
-                              await _barangService.Updatebarang(_barang);
-                          Navigator.pop(context, result);
+                          print("Good Data Can Save");
+                          // var _barang = Barang();
+                          // _barang.id = widget.barang.id;
+                          // _barang.KodeBarang = NamaPelangganController.text;
+                          // _barang.NamaBarang = AlamatController.text;
+                          // _barang.harga = TeleponController.text;
+                          // _barang.stock = EmailController.text;
+                          // var result =
+                          //     await _barangService.Updatebarang(_barang);
+                          // Navigator.pop(context, result);
                         }
                       },
                       child: const Text('Update Details')),
